@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cx.mapper.StudentPaperMapper">
+    <select id="queryStudentPaper" resultType="StudentPaper" parameterType="int">
+        SELECT sp.questionId,sp.paperId,sp.rightAnswer,sp.studentAnswer,fq.question FROM fill_question fq,student_paper sp
+        where fq.questionId =sp.questionId and sp.studentId=#{studentId}
+    </select>
+
+
+</mapper>

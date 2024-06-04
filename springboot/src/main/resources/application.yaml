@@ -1,0 +1,32 @@
+#配置端口号
+server:
+  port: 9090
+#配置数据库连接
+spring:
+  datasource:
+      username: root
+      password: "010419"  #必须加引号
+      url: jdbc:mysql://localhost:3306/examsystem?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource  #使用德鲁伊数据库连接池
+  #配置邮件发送
+  mail:
+    username: 1936018865@qq.com
+    password: aymmjvmmbcvsbcfd
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+#配日志日志文件
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+    map-underscore-to-camel-case: false  #关闭驼峰转换
+  mapper-locations: classpath:mapper/*.xml  #设置配置文件的路径
+  type-aliases-package: com.cx.pojo         #起别名
+

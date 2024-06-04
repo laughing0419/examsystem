@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cx.mapper.MultiQuestionMapper">
+    <select id="queryMultiForExam" resultType="MultiQuestion" parameterType="int">
+        SELECT mq.question,mq.answerA, mq.answerB,mq.answerC,mq.answerD,mq.answer,mq.questionId,pm.score
+        FROM `paper_manage` pm,multi_question mq where pm.questionId = mq.questionId and pm.paperId = #{paperId}
+    </select>
+
+
+</mapper>
